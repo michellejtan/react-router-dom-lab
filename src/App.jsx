@@ -19,6 +19,12 @@ import './index.css'
 const App = () => {
 
   const [mailboxes, setMailBoxes] = useState([]);
+
+  const addBox = (newMailBoxData) => {
+    newMailBoxData._id = pokemon.length + 1;
+    setMailBoxes([...mailboxes, newMailBoxData]); 
+  };
+  
   return (
     <>
       <NavBar />
