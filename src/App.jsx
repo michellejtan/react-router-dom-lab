@@ -21,10 +21,10 @@ const App = () => {
   const [mailboxes, setMailBoxes] = useState([]);
 
   const addBox = (newMailBoxData) => {
-    newMailBoxData._id = pokemon.length + 1;
+    newMailBoxData._id = mailboxes.length + 1;
     setMailBoxes([...mailboxes, newMailBoxData]); 
   };
-  
+
   return (
     <>
       <NavBar />
@@ -36,7 +36,7 @@ const App = () => {
           element={<MailboxList mailboxes={mailboxes} />} />
         <Route
           path="/new-mailbox"
-          element={<MailboxForm />}
+          element={<MailboxForm addBox={addBox} />}
         />
         <Route
           path="/mailboxes/:mailboxId"
