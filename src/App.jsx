@@ -8,8 +8,6 @@ import { Routes, Route } from 'react-router';
 import './index.css'
 // import './App.css'
 
-;
-import LetterForm from './components/LetterForm/LetterForm';
 // const initialState = [
 //   {
 //     _id: 1,
@@ -25,11 +23,11 @@ const App = () => {
 
   const addBox = (newMailBoxData) => {
     newMailBoxData._id = mailboxes.length + 1;
-    setMailBoxes([...mailboxes, newMailBoxData]); 
+    setMailBoxes([...mailboxes, newMailBoxData]);
   };
 
   const addLetter = (newMailBoxData) => {
-    setLetters([...letters, newMailBoxData]); 
+    setLetters([...letters, newMailBoxData]);
   };
 
   return (
@@ -47,11 +45,11 @@ const App = () => {
         />
         <Route
           path="/mailboxes/:mailboxId"
-          element={<MailboxDetails mailboxes={mailboxes}/>}
+          element={<MailboxDetails mailboxes={mailboxes} letters={letters} />}
         />
         <Route
           path="/new-letter"
-          element={<LetterForm addLetter={addLetter} mailboxes={mailboxes}/>}
+          element={<LetterForm addLetter={addLetter} mailboxes={mailboxes} />}
         />
         <Route path="*" element={<h2>Mailbox Not Found!</h2>} />
       </Routes>
